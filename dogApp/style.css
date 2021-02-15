@@ -1,0 +1,246 @@
+@font-face {
+    font-family: 'Special Elite';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Special Elite Regular'), local('SpecialElite-Regular'), url(https://fonts.gstatic.com/s/specialelite/v11/XLYgIZbkc4JPUL5CVArUVL0ntnAOSA.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-image: url(https://images.unsplash.com/photo-1493761107459-7042ff2d13b5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2768&q=80);
+    background-size: cover;
+    display: flex;
+    color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Special Elite', sans-serif;
+    font-size: larger;
+}
+
+.catelusi img {
+    border-radius: 100px;
+    height: 200px;
+    width: 200px;
+    box-shadow: 5px 3px 12px 7px rgba(69, 29, 146, 0.77);
+    background: linear-gradient(233deg, #e56420, #c22525, #3d9c31, #37bbde);
+    background-size: cover;
+    background-blend-mode: hard-light;
+    animation: hue-rotate 3s linear infinite;
+}
+
+@keyframes hue-rotate {
+    from {
+        -webkit-filter: hue-rotate(0);
+        -moz-filter: hue-rotate(0);
+        -ms-filter: hue-rotate(0);
+        filter: hue-rotate(0);
+    }
+    to {
+        -webkit-filter: hue-rotate(360deg);
+        -moz-filter: hue-rotate(360deg);
+        -ms-filter: hue-rotate(360deg);
+        filter: hue-rotate(360deg);
+    }
+}
+
+.fetchByBreed {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    height: 700px;
+}
+
+#rase {
+    width: 200px;
+    height: 40px;
+    font-family: 'Special Elite', sans-serif;
+    font-size: large;
+    margin-bottom: 10px;
+    color: #b05454;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(240, 218, 255, 1) 100%, rgba(0, 212, 255, 1) 100%);
+    font-weight: 700;
+    border: none;
+    outline: none;
+}
+
+#rase::-webkit-scrollbar {
+    display: none;
+}
+
+#rase {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+option {
+    font-size: large;
+}
+
+label {
+    font-weight: 800;
+    padding-bottom: 15px;
+}
+
+.slider {
+    height: 100%;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    transition: transform 250ms ease-in;
+}
+
+.slider img {
+    width: 400px;
+    height: 500px;
+}
+
+.fetchedDiv {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.slider_div {
+    display: none;
+    overflow: hidden;
+    width: 400px;
+    height: 500px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.slider_div:hover {
+    transform: skewX(-0.3deg);
+    box-shadow: 4px 6px 20px darkgray;
+}
+
+.raceLabel {
+    font-weight: 900;
+    padding: 3px;
+    background: red;
+    font-size: larger;
+    letter-spacing: 0.2rem;
+    position: relative;
+    bottom: 40px;
+    left: 80px;
+}
+
+.reload {
+    background-image: url(img/reload.png);
+    height: 50px;
+    width: 50px;
+    border-radius: 5px;
+    position: relative;
+    bottom: 130px;
+    left: 20px;
+    opacity: 0.6;
+    transition: all 0.2s ease-in
+}
+
+.circle {
+    position: absolute;
+    border-radius: 500%;
+    pointer-events: none;
+    background-image: radial-gradient(circle, white, #971943);
+    width: 2px;
+    height: 2px;
+    z-index: 1000;
+    -webkit-animation-name: ripple;
+    animation-name: ripple;
+    -webkit-animation-duration: 0.7s;
+    animation-duration: 0.7s;
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+}
+
+@-webkit-keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0;
+    }
+    75% {
+        transform: scale(450, 450);
+        opacity: 0.75;
+    }
+    100% {
+        transform: scale(700, 700);
+        opacity: 0;
+    }
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0;
+    }
+    75% {
+        transform: scale(450, 450);
+        opacity: 0.75;
+    }
+    100% {
+        transform: scale(700, 700);
+        opacity: 0;
+    }
+}
+
+.reload:hover {
+    opacity: 1;
+    transition-duration: 3s;
+    transform: rotate(-180deg);
+}
+
+.slider__nav {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    width: 400px;
+    top: 370px;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+}
+
+.slider__indicator {
+    border: 0;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: rgba(202, 192, 192, 0.712);
+    margin: 5px 12px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.current-slide {
+    z-index: 5;
+    /* pentru a s pune primul slide deasupra mereu cand selectam o rasa(by default ultimul slide este cel de sus)*/
+}
+
+.slider__indicator.current-slide {
+    background: rgba(112, 108, 108, 0.75);
+}
+
+.save {
+    background-image: url(img/arrow.png);
+    height: 50px;
+    width: 50px;
+    bottom: 140px;
+    left: 20px;
+    position: relative;
+}
+
+.collection {
+    display: flex;
+}
